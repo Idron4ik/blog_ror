@@ -35,8 +35,14 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    redirect_to @post
-  end
+    @post = Post.find(params[:id])
+
+    if @post.update(params[:post].permit(:title, :body))
+      redirect_to @post
+    else
+      render 'edit'
+    end
+end
 
   # DELETE /posts/1
   # DELETE /posts/1.json
