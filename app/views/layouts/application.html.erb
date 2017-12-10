@@ -10,9 +10,7 @@
 
   <body>
 
-    <div class="preloader">
-      <div class="loader"></div>
-    </div>
+
   <div class="wrapper">
     <header>
       <div class="logo">
@@ -40,12 +38,25 @@
   </div>
   <script type="text/javascript">
     document.body.onload = function(){
-      setTimeout(function(){
-        var preloader = document.querySelector(".preloader");
-        if(!preloader.classList.contains("done"))
-          preloader.classList.add("done")
-      },1000);
+    	var div = document.createElement("div");
+    	var innerDiv = document.createElement("div");
+    	var span = document.createElement("span");
+    	div.className = "preloader";
+    	innerDiv.className = "loader";
+    	span.className = "loader-name"
+    	span.innerHTML = "Zachikaute, byd laska";
+    	div.appendChild(innerDiv);
+    	div.appendChild(span);
+    	document.body.appendChild(div);
+     	var preloader = document.querySelector(".preloader");
+        setTimeout(function preload(){
+	        if(!preloader.classList.contains("done")){
+	            preloader.classList.add("done");
+	        }
+      	},2000);
     }
+
+    preload();
   </script>
   </body>
 </html>

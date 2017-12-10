@@ -6,7 +6,6 @@
       <img src="https://i.imgur.com/hLGH5uk.jpg">
       <div class="post-title"><%= post.title %></div>
     </div>
-    
       <div class="post-open">
         <div class="post-date"><%= post.created_at.strftime("%B, %d,%Y") %></div>
         <div>
@@ -20,3 +19,13 @@
       </div>
   </div>
 <% end %>
+
+  <script type="text/javascript">
+    document.onload = function(){
+      var preloader = document.querySelector(".preloader");
+        setTimeout(function(){
+            preloader.classList.add("done");         
+        }, 1000);
+    }
+  </script>
+
