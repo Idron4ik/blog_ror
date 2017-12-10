@@ -1,0 +1,61 @@
+*
+  box-sizing: border-box
+html
+  font-size: 16px
+  font-family: 'Open Sans', sans-serif
+
+.wrapper
+  max-width: 1920px
+  margin: 0 auto
+
+.clearfix
+  content: ""
+  display: inline-block
+  clear: both
+img
+  max-width: 100%
+  height: auto
+  margin-bottom: 15px
+h1,h2,h3
+  margin: 0
+  padding: 0
+  margin-top: 20px
+  margin-bottom: 20px
+  font-weight: bold
+h1
+  font-size: 3rem
+h2
+  font-size: 2rem
+.post-open
+  display: flex
+  justify-content: space-between
+  align-items: center
+  .post-date
+    color: white
+    font-size: 1rem
+  
+div .post-link
+  text-decoration: none
+  text-align: center
+  color: white
+  display: inline-block
+  padding: 10px 20px
+  border-radius: 10px
+  transition: all 400ms
+  &:hover
+    background-color: white
+    color: black
+hr
+  height: 2px
+  background-color: $white
+.hr
+  height: 2px
+  background-color: $black
+
+[type*="text"]
+  border: none
+  width: 100%
+  font-size: 1rem
+  padding: 10px 5px
+  color: #333
+  background-color: $white

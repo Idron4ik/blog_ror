@@ -1,0 +1,124 @@
+@import "bootstrap-sprockets"
+@import "bootstrap"
+@import "_normalize"
+@import "_variable"
+@import "_common"
+@import "_scaffolds"
+
+header
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  width: 23%
+  background-color: $black
+  color: $white
+  padding-left: 15px
+  padding-right: 15px
+
+  .logo
+    text-align: center 
+    img
+      width: 100px
+  nav ul
+
+    margin: 0 auto
+    padding: 0
+    li
+      list-style: none
+      color: $white
+      margin: 20px
+      .link
+        text-align: center
+        text-transform: uppercase
+        text-decoration: none
+        color: $white
+        display: block
+        padding: 10px 80px
+        border-radius: 10px
+        transition: all 400ms
+        &:hover
+          background-color: $white
+          color: $black
+
+.main
+  background-image: url("https://wallpaperscraft.com/image/star_nebula_glow_94217_1920x1080.jpg")
+  background-attachment: fixed
+  background-repeat: repeat
+  background-size: 100%
+  background-position: 400px 0
+  margin-left: 23%
+  padding-left:  15px
+  padding-right: 15px
+  padding-top: 20px
+  padding-bottom: 150px
+  min-height: 100vh
+  .post
+    overflow: hidden
+    max-width: 1000px
+    margin: 0 auto
+    padding: 15px
+    border-radius: 15px
+    background-color: $black
+    margin-top: 80px
+    .post-title
+      position: absolute
+      top: 105%
+      left: 50%
+      transform: translateY(-50%)
+      transform: translateX(-50%)
+      color: $white
+      font-size: 4rem
+      z-index: 3
+      opacity: 0
+      transition: all 400ms
+    .post-thumb
+      position: relative
+      &:after
+        display: block
+        content: ""
+        position: absolute
+        left: 50%
+        right: 50%
+        height: 2px
+        bottom: 10px
+        transition: all 400ms
+    &:hover .post-title
+      opacity: 1
+      top: 50%
+    &:hover .post-thumb:after
+      left: 0%
+      right: 0%
+      background-color: $white
+    img
+      opacity: 0.5
+      margin-bottom: 10px
+    .post-open
+      display: flex
+      justify-content: space-between
+      align-items: center
+      .post-date
+        color: $white
+        font-size: 1rem
+  .show-post
+    max-width: 1400px
+    margin: 0 auto
+    background-color: $black
+    border-radius: 15px
+    padding: 15px
+    .post-header
+      .post-description
+        background-color: $white
+        padding: 15px
+        h2
+          text-align: center
+        .post-text
+          color: #333
+          font-size: 1.3rem
+          line-height: 1.2rem
+    #comments
+      max-width: 600px
+      border-radius: 10px
+
+
+      

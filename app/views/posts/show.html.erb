@@ -1,21 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
-<div id="comments">
-	<h2><%= @post.comments.count%> Comments</h2>
-	<%= render @post.comments %>
-	<h3>Add to Comment:</h3>
-	<%= render "comments/form"%>
+		
+<div class="show-post">
+	<div class="post-header">
+	  <img src="https://i.imgur.com/hLGH5uk.jpg">
+	  <div class="post-description">
+	  	<h2>Title:</h2>
+	  	<hr class="hr"></hr>
+	  	<div class="post-text"><%= @post.title %></div>
+	  		
+	  	<h2>Body:</h2>
+	  	<hr class="hr"></hr>
+	  	<div class="post-text"><%= @post.body %></div>
+	  </div>
+		
+	</div>
+	<div id="comments">
+		<h2><%= @post.comments.count%> Comments</h2>
+		<%= render @post.comments %>
+		<h3>Add to Comment:</h3>
+		<%= render "comments/form"%>
+	</div>
+	<div class="post-open">
+		<div class="post-date"> <%= time_ago_in_words(@post.created_at) %></div>
+		   <% if user_signed_in? %>
+			<%= link_to 'Edit', edit_post_path(@post),:class => "post-link"  %>
+			<%= link_to 'Back', posts_path, :class => "post-link"  %>
+          <% end %> 
+	</div>
 </div>
-
-<div class="date"> <%= time_ago_in_words(@post.created_at) %></div>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
