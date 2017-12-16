@@ -21,14 +21,15 @@
       <nav class="nav">
         <ul>
           <li><%= link_to "Posts", root_path, :class => "link" %></li>
-          <li><a href="" class="link">Contact</a></li>
-          <li><a href="" class="link">Me</a></li>
           <li><%= link_to "About", about_path, :class => "link"%></li>
-          <li>  
-            <% if user_signed_in? %>
-              <%= link_to 'New Post', new_post_path, :class => "link" %>
-            <% end %>  
-          </li>
+              <% if user_signed_in? %>
+                <div class="admin-panel"> <h5>Admin Panel</h5>
+                  <li><%= link_to 'New Post', new_post_path, :class => "link" %></li>
+                  <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "link" %></li>         
+                </div>  
+                <% else %>
+                      <li><%= link_to "Sign in", user_session_path, :class => "link" %> </li>
+              <% end %>               
         </ul>
       </nav>
     </header>
