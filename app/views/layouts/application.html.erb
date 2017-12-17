@@ -13,6 +13,7 @@
 
 
   <div class="wrapper">
+    <div class="menu-btn">Menu</div>
     <header>
       <div class="logo">
         <img src="http://thumbs4.ebaystatic.com/d/l225/m/m2-wEmdhQ3E4BhEzoUxhrOA.jpg">
@@ -60,5 +61,16 @@
 
     preload();
   </script>
- -->  </body>
+ -->
+ <script>
+  var btn = document.querySelector(".menu-btn");
+  var header = document.querySelector("header");
+  header.style.left = "-50%";
+
+  btn.onclick = function(){
+    header.style.left == "-50%" ? header.style.left = "0" : header.style.left = "-50%";
+   }
+  header.style.left = "0" ;
+ </script>  
+</body>
 </html>

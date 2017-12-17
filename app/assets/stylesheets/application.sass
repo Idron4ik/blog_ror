@@ -4,7 +4,6 @@
 @import "_variable"
 @import "_common"
 @import "_scaffolds"
-
 .preloader
   position: fixed
   left: 0
@@ -54,6 +53,38 @@
     transform: translate(-50%, -50%) rotate(0deg)
   to    
     transform: translate(-50%, -50%) rotate(360deg)
+.menu-btn
+  position: fixed
+  width: 100%
+  background-color: $black
+  height: 50px
+  line-height: 50px
+  text-align: center
+  color: $white
+  text-transform: uppercase
+  transition: all 400ms
+  z-index: 4
+  display: none
+  &:hover
+    color: $black
+    cursor: pointer
+  &:after
+    content: ""
+    display: block
+    position: absolute
+    top: 0
+    left: 50%
+    right: 51%
+    height: 50px
+    background-color: $white
+    transition: all 400ms
+    z-index: 2
+  &:hover:after
+    content: "MENU"
+    text-transform: uppercase
+    color: $black
+    left: 0
+    right: 0
 header
   position: fixed
   top: 0
@@ -64,6 +95,8 @@ header
   color: $white
   padding-left: 15px
   padding-right: 15px
+  z-index: 9
+  transition: all 400ms
 
   .logo
     text-align: center 
@@ -73,19 +106,23 @@ header
 
     margin: 0 auto
     padding: 0
+    
     li
+      text-align: center
       list-style: none
       color: $white
       margin: 20px
+      height: 50px
       .link
+        margin: 0 auto
         text-align: center
         text-transform: uppercase
         text-decoration: none
         color: $white
         display: block
-        padding: 10px 80px
         border-radius: 10px
         transition: all 400ms
+        line-height: 50px
         &:hover
           background-color: $white
           color: $black
